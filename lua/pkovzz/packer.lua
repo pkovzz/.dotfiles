@@ -38,8 +38,12 @@ return require('packer').startup(function(use)
 -- Treesitter
  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
-  use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-}
+ use {
+   "windwp/nvim-autopairs",
+   config = function() require("nvim-autopairs").setup {} end
+ }
+
+  -- Is using a standard Neovim install, i.e. built from source or using a
+  -- provided appimage.
+ use 'lewis6991/impatient.nvim'
 end)
