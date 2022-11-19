@@ -5,45 +5,47 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
- use 'wbthomason/packer.nvim'
- use 'folke/tokyonight.nvim'
- use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
- }
+  use 'wbthomason/packer.nvim'
+  use 'folke/tokyonight.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
- use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope.nvim"
 
- use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
- use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
- -- cmp plugins
- use "hrsh7th/nvim-cmp" -- The completion plugin
- use "hrsh7th/cmp-buffer" -- buffer completions
- use "hrsh7th/cmp-path" -- path completions
- use "hrsh7th/cmp-cmdline" -- cmdline completions
- use "saadparwaiz1/cmp_luasnip" -- snippet completions
- use "hrsh7th/cmp-nvim-lsp"
- use "hrsh7th/cmp-nvim-lua"
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
- -- snippets
- use "L3MON4D3/LuaSnip" --snippet engine
- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
- -- LSP
- use "neovim/nvim-lspconfig" -- enable LSP
- use "williamboman/mason.nvim" -- simple to use language server installer
- use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
 
--- Treesitter
- use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
- use {
-   "windwp/nvim-autopairs",
-   config = function() require("nvim-autopairs").setup {} end
- }
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
   -- Is using a standard Neovim install, i.e. built from source or using a
   -- provided appimage.
- use 'lewis6991/impatient.nvim'
+  use 'lewis6991/impatient.nvim'
+
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 end)
