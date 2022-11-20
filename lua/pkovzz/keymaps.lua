@@ -23,6 +23,9 @@ keymap("n", "<leader>e", ":Ex<CR>", opts)
 -- Format file
 keymap("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>", opts)
 
+-- Telescope
+keymap("n", "<leader>t", ":Telescope find_files<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
