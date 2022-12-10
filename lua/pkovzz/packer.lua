@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
+  -- Be sure ripgrep is installed; https://github.com/BurntSushi/ripgrep#installation
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
 
